@@ -1,10 +1,10 @@
 #include<stdio.h>
 #include<math.h>
 
-int p[100000];
-int isp[1000000];
+int p[1000000];
+int isp[10000000];
 int l = 0;
-int cnt[100000];
+int cnt[1000000];
 int first = 1;
 
 

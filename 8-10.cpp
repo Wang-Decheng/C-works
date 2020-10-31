@@ -3,16 +3,16 @@
 
 int main()
 {
-	int x,y,a,b;
-	scanf("%d%d",&x,&y);
+	long long x,y,a,b;
+	scanf("%lld%lld",&x,&y);
 	a=(x+y)/2;
 	b=(x-y)/2;
-	int sa=a>0?1:-1;
-	int sb=b>0?1:-1;
+	long long sa=a>0?1:-1;
+	long long sb=b>0?1:-1;
 	a*=sa;
 	b*=sb;
-	int aa=0;
-	int bb=0;
+	long long aa=0;
+	long long bb=0;
 	while(a>0)
 	{
 		aa*=10;
@@ -25,7 +25,7 @@ int main()
 		bb+=b%10;
 		b/=10;
 	}
-	printf("%d %d",aa*sa+bb*sb,aa*sa-bb*sb);
+	printf("%lld %lld",aa*sa+bb*sb,aa*sa-bb*sb);
 	return 0;
 }
 
