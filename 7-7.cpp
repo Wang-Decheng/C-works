@@ -2,16 +2,20 @@
 
 int main()
 {
-	double h = 100;
-	double sum = 0;
 	int n;
 	scanf("%d",&n);
-	sum+=h;
-	for(int i = 2;i<=n;i++)
+	int c[100];
+	n>>=1;
+	printf("%d ",n);
+	int t=0;
+	while(n>0)
 	{
-		sum+=h;
-		h/=2.0;
+		t++;
+		c[t]=n%10;
+		n/=10;
 	}
-	printf("%lf\n%lf",sum,h/2.0);
-	return 0; 
- } 
+	for(int i=t;i>=1;i--)
+	{
+		printf("%c",c[i]+'a');
+	}
+}
