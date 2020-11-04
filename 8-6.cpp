@@ -1,54 +1,32 @@
 #include<stdio.h>
 #include<math.h>
 
-int p[1000000];
-int isp[10000000];
-int l = 0;
 int cnt[1000000];
-int first = 1;
-
 
 int main()
 {
-	int n;
+	int n,sum=0,f=1;
 	scanf("%d",&n);
-	for(int i = 2; i <= n; i++)isp[i]=1;
-	for(int i = 2; i <= n; i++)
+	for(int i=2;n!=1&&i<n;i++)
 	{
-		if(isp[i])
+		while(n%i==0)
 		{
-			l++;
-			p[l] = i;
-			for(int j = 2 * i; j <= n; j+=i)isp[j]=0;
+			if(!f)printf("+");
+			f=0;
+			sum+=i;
+			n/=i; 
+			printf("%d",i);;
 		}
 	}
-	if(isp[n])
+	if(f)
 	{
 		printf("0");
 		return 0;
 	}
-	for(int i=1;i<=l;i++)
+	if(n!=1)
 	{
-		while(n%p[i]==0)
-		{
-			cnt[i]++;
-			n/=p[i];
-			
-		}
-	}
-	int sum = 0;
-	for(int i=1;i<=l;i++)
-	{
-		for(int j=1;j<=cnt[i];j++)
-		{ 
-			sum+=p[i];
-			if(!first)
-			{
-				printf("+");
-			}
-			first = 0;
-			printf("%d",p[i]);
-		}
+		printf("+%d",n);
+		sum+=n;
 	}
 	printf("=%d",sum);
 	return 0;
