@@ -3,7 +3,7 @@
 int main()
 {
 	char s[20000];
-	scanf("%s",s);
+	gets(s);
 	char ch[100][100];
 	strcpy(ch[1],"大写字母");
 	strcpy(ch[2],"小写字母");
@@ -30,7 +30,7 @@ int main()
 			}
 		}
 	}
-	for(int i=1;i<=4;i++)printf("%d ",r[i]);
-	printf("\n");
+	//for(int i=1;i<=4;i++)printf("%d ",r[i]);
+	//printf("\n");
 	printf("大写字母：%d 小写字母：%d 数字字符：%d 其它字符：%d 从多到少依次输出如下： %s：%d %s：%d %s：%d %s：%d",cnt[1],cnt[2],cnt[3],cnt[4],ch[r[1]],cnt[r[1]],ch[r[2]],cnt[r[2]],ch[r[3]],cnt[r[3]],ch[r[4]],cnt[r[4]]);
 }

@@ -5,16 +5,17 @@ int cnt[200];
 
 int main()
 {
-	char c;
-	while(scanf("%c",&c)!=EOF)
+	char s[1000];
+	gets(s);
+	for(int i=0;i<strlen(s);i++)
 	{
-		if(c-'a'>=0&&c-'a'<26)
+		if(s[i]-'a'>=0&&s[i]-'a'<26)
 		{
-			cnt[c-'a']++;
+			cnt[s[i]-'a']++;
 		}
-		if(c-'A'>=0&&c-'A'<26)
+		if(s[i]-'A'>=0&&s[i]-'A'<26)
 		{
-			cnt[c-'A']++;
+			cnt[s[i]-'A']++;
 		}
 	}
 	for(int i=0;i<26;i++)

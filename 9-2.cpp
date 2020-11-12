@@ -1,18 +1,16 @@
 #include<stdio.h>
 #include<math.h>
+#include<string.h>
 
 int main()
 {
 	char c[1000];
-	int cnt = 0; 
-	while(scanf("%s",c)!=EOF)
+	gets(c);
+	for(int i=0;i<strlen(c);i++)
 	{
-		printf("%s",c);
-		cnt++;
-		if(cnt>200)break;
+		if(c[i]!=' ')
+		printf("%c",c[i]);
 	}
-
-
 	return 0;
 }
 
