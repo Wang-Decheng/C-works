@@ -2,13 +2,19 @@
 #include<math.h>
 
 int b[1000000];
-int a[100];
 
 int main()
 {
-	int n,t,l=0,maxn=-9999999;
+	int n,m,t,l=0,maxn=-9999999;
 	scanf("%d",&n); 
-	for(int i=1;i<=2*n;i++)
+	for(int i=1;i<=n;i++)
+	{
+		scanf("%d",&t);
+		b[t+10000]++;
+		maxn=maxn>t?maxn:t;
+	}
+	scanf("%d",&m);
+	for(int i=1;i<=m;i++)
 	{
 		scanf("%d",&t);
 		b[t+10000]++;
