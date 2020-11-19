@@ -4,39 +4,23 @@
 int main()
 {
 	char s[200],a[100],b[100];
-	int la=0,lb=0;
-	scanf("%s",s);
-	for(int i=0;i<strlen(s);i++)
+	gets(s);
+	int l=strlen(s);
+	for(int i=1; i<=l/2; i++)
 	{
-		if(i%2==1)
+		for(int j=i+1; j<=l/2; j++)
 		{
-			la++;
-			a[la]=s[i];
-		}
-		else
-		{
-			lb++;
-			a[lb]=s[i];
-		}
-	}
-	for(int i=0;i<lb;i++)
-	{
-		for(int j=i+1;j<lb;j++)
-		{
-			if(b[i]>b[j])
+			int a=2*(i-1);
+			int b=2*(j-1);
+			if(s[a]>s[b])
 			{
-				char t=b[i];
-				b[i]=b[j];
-				b[j]=t;
+				char t=s[a];
+				s[a]=s[b];
+				s[b]=t;
 			}
 		}
 	}
-	printf("#%d %d\n",la,lb);
-	for(int i=0;i<lb;i++)
-	{
-		printf("%c",b[i]);
-		if(i<la)printf("%c",a[i]);
-	}
+	printf("%s",s);
 	return 0;
 }
 
