@@ -1,30 +1,30 @@
 #include<stdio.h>
 #include<math.h>
-
+#include<string.h>
 int main()
 {
 	int n,m;
-	int b[10010]; 
+	double a[10010],b[10010];
 	scanf("%d",&n);
 	for(int i=1;i<=n;i++)
 	{
-		int t;
-		scanf("%d",&t);
-		b[t]=1;
+		scanf("%lf",&a[i]);
 	}
-	scanf("%d",&m);
+	double t;
 	int f=1;
+	scanf("%d",&m);
 	for(int i=1;i<=m;i++)
 	{
-		int t;
-		scanf("%d",&t);
-		if(b[t])
+		scanf("%lf",&t);
+		for(int j=1;j<=n;j++)
 		{
-			if(!f)printf(" ");
-			f=0;
-			printf("%d",t);
+			if(abs(t-a[j])<1e-5)
+			{
+				if(!f)printf(" ");
+				f=0;
+				printf("%g",t);
+			}
 		}
-		
 	}
 	return 0;
 }
